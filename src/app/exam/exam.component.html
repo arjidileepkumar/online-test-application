@@ -1,0 +1,51 @@
+<div class="p-5 text-center bg-image" style="
+    
+      height: 611px;
+      width: 100%;
+      margin-top: 0px;
+    ">
+    <div class="mask p-3" style="background-color: rgb(241 241 241);">
+        <div class="container">
+             
+        <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+           
+            <div class="m-3 d-flex flex-row" *ngIf="this.showN">
+                <i class="fa fa-exclamation-triangle"></i>
+                <label class="text-danger ms-2"  #alertM> All Questions are Required to Submit</label>
+            </div>
+            
+            <div class="container" *ngFor="let q of questions ; let i=index ">
+                <h4 for="Question" class="input-group" >
+                    Q {{ i+1 }}: {{ q.question }} <span class="numberCircle"> {{q.score }}</span>  
+                </h4>
+                
+                <div style="display: grid;text-align: left;grid-template-columns: repeat(2, 1fr); padding-left: 2%;" class="mb-3 ">
+                    <ul class="list-group" style="list-style: none;" >
+                        <label class="lblAnswer">
+                            <li class=""
+                                style="background: transparent; " *ngFor="let a of answers;">
+                                <div *ngIf="a.questionNo == q.id ||  ( a.id != 1 && a.id != 2 && a.id != 3 && q.id != 1 && q.id != 2 ) ">
+                                    <input type="radio" name="option{{i}}" value="{{a.id}}"  #option{{i}}="ngModel" [(ngModel)]="user[i]" required >
+                                    {{ a.answer }}
+                                </div>
+                            </li>
+                           
+                        </label>
+                        
+                    </ul>
+                </div>
+        
+            </div>
+            <div class="offset-sm-1 col-sm-10 mb-3">
+            
+                <button type="submit" class="btn btn-clr mb-3" id="next"><i
+                    class="fa fa-share me-2"></i> SUBMIT</button>
+            </div>
+            
+        </form>
+        </div>
+       
+        
+    </div>
+</div>
+        

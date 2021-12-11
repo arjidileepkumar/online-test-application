@@ -1,0 +1,22 @@
+<div class="p-5 text-center bg-image" style="
+    
+      height: 611px;
+      width: 100%;
+      margin-top: 0px;
+    ">
+
+    <div class="mask" style="background-color: rgba(222, 245, 236, 0.82);">
+        <div class="d-flex justify-content-center align-items-center" style="height:300px;margin-top: 50px;" *ngIf="show">
+            <div class="text-black">
+                <h1 class="mb-3">Online Test Portal</h1>
+                <h6 class="mb-3">an online test portal for assessing candidate</h6>
+                <button type="button" class="btn btn-clr" (click)="show=!show" id="Register">  Ready for Test <i class="fa fa-thumbs-up"></i></button>
+            </div>
+        </div>
+        <app-register *ngIf="!show"></app-register>
+    </div>
+   
+</div>
+
+
+

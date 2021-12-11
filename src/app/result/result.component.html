@@ -1,0 +1,19 @@
+<div class="questions-form bg-light mt-4 p-4">
+    
+    
+    <hr>
+    <h4 class="text-center fw-bold">Name: {{ fullName }} </h4>
+    <h4 class="text-center fw-bold">Email : {{ Email }} </h4>
+    <h4 class="text-center fw-bold">Score : {{ score }} </h4>
+    
+    <hr>
+    <div class="conatiner d-inline justify-content-center d-flex">
+        <h4 class="text-center fw-bold"><i class="fa fa-info-circle m-2" style="color: #d94881;"></i>Your Result is : {{ score }}% </h4>
+        <button   class="btn btn-success d-inline m-2" *ngIf="showen">Pass</button>
+        <button class="btn btn-danger d-inline m-2" *ngIf="!showen">Failed</button>
+        
+       
+
+    </div>
+    
+    </div>

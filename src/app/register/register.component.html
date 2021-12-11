@@ -1,0 +1,63 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="offset-sm-3 col-sm-6">
+            
+                        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                            
+                            <div class="m-3 d-flex flex-row" *ngIf="this.showen">
+                                <i class="fa fa-exclamation-triangle"></i>
+                                <label class="text-danger ms-2"  #alertM> All fields are Required to Submit</label>
+                            </div>
+                            <div class="form-row" style="margin-top: 15px;">
+                                <div class="offset-sm-1 col-sm-10">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-user" style="font-size: 1.5rem;"></i>
+                                        </div>
+                                            
+                                        </div>
+                                        <input type="text" class="form-control" 
+                                        formControlName="fullName" name="fullName" placeholder="Full Name" [ngClass]="{ 'is-invalid': submitted && form.get('fullName').errors }"
+                                         [(ngModel)]="user.fullName">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-top: 15px;">
+                                <div class="offset-sm-1 col-sm-10">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-envelope" style="font-size: 1.5rem;"></i>
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('email').errors }"
+                                        formControlName="email" name="email" placeholder="email" [(ngModel)]="user.email">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="offset-sm-1 col-sm-10">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-calendar"  style="font-size: 1.5rem;"></i></div>
+                                        </div>
+                                        <input type="Date" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('birthDate').errors }"
+                                         formControlName="birthDate" name="birthDate" placeholder="Your Birth Date" [(ngModel)]="user.birthDate" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row" >
+                                <div class="offset-sm-1 col-sm-10 mb-3">
+                                    <button type="submit" class="btn btn-clr" id="Exam"> Next <i class="fa fa-arrow-right" style="font-size: 1rem;"></i></button>
+                                </div>
+                            </div>
+                        </form>
+           
+            </div>
+        </div>
+    </div>
